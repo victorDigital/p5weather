@@ -7,10 +7,29 @@ canvas {
   display: block;
 }
 
-* {
-  margin-left: 20;
-  margin-right: 20;
-  margin-top: 2;
-  margin-bottom: 2;
-  font-size: large;
+h1 {
+  font-size: 5em;
+  margin: 0;
+  padding: 0%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0%;
+  text-align: center;
+}
+@font-face { font-family: PSB; src: url('Product Sans Bold.ttf'); } 
+  h1 {font-family: PSB}
+  h2 {font-family: PSB}
+  p {font-family: PSB}
+  div {font-family: PSB}
+
+
+#tempdiv {
+  border-color: #000000;
+  border-style: none none solid none;
+  border-width: 10px;
+  border-radius: 0px;
 }
