@@ -13,20 +13,16 @@
     <script src="libraries/p5.sound.min.js"></script>
   </head>
 
-  <body>
+  <body style="background-color: #EBEDF2;">
+    <input class="text" type="text" placeholder="Enter City" id="myInput">
+    <button class="button" type="button" onclick="getInputValue();">Get City</button>
     <script src="sketch.js"></script>
-    
-    <div id="tempdiv">
-      <h1 id="temp"></h1>
+    <div class="tempdiv">
+      <h2 class="noTBMargin" id="city">Copenhagen</h2>
     </div>
-    <h2 id="city"></h1>
-    <h2 id="weather"></h1>
-    <h2 id="humidity"></h1>
-    <h2 id="wind"></h1>
-    <h2 id="pressure"></h1>
-    <h2 id="clouds"></h1>
-    <h2 id="sunrise"></h1>
-    <h2 id="sunset"></h1>
-
+    <div class="tempdiv">
+      <h1 id="temp">20°</h1>
+      <h2 class="undertext">temperature</h2>
+    </div>
   </body>
 </html>
