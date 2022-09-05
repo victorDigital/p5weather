@@ -10,7 +10,7 @@ function draw() {
 }
 
 function getData(city) {
-  var keyAPI = "APIKEY"; 
+  var keyAPI = "f09b68e6f6ece1190372b7564f8a88e5"; 
   var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="  + city + "&units=metric" + "&appid=" +   keyAPI;
   loadJSON(weatherURL,weatherData);
 
