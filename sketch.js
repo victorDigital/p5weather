@@ -18,7 +18,7 @@ function weatherData(data){
     weather = data;
     console.log(weather);
     document.getElementById("temp").innerHTML = str(weather.main.temp) + "°";
-    //document.getElementById("humidity").innerHTML = "humidity: " + str(weather.main.humidity) + "%";
+    document.getElementById("humidity").innerHTML = str(weather.main.humidity) + "%";
     //document.getElementById("wind").innerHTML = "wind: " + str(weather.wind.speed) + "m/s";
     //document.getElementById("sunrise").innerHTML = "sunrise: " + timeConverter(weather.sys.sunrise);
     //document.getElementById("sunset").innerHTML = "sunset: " + timeConverter(weather.sys.sunset);
@@ -41,10 +41,14 @@ function getInputValue(){
   var inputVal = document.getElementById("myInput").value;
   getData(inputVal);
   print(inputVal);
-  for (var i = 0; i < 100; i++){
+  for (var i = 0; i < 1000; i++){
     if(weather == "" ){
+      document.getElementById("city").innerHTML = "Loading...";
     }
     weatherData();
+  }
+  if(weather == ""){
+    document.getElementById("city").innerHTML = "City not found";
   }
   
 }
