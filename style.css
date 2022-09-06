@@ -1,25 +1,27 @@
-
-
+*{
+  color: #ffffff;
+}
 @font-face { font-family: PSB; src: url('Product Sans Bold.ttf'); } 
   h1 {
     font-family: PSB;
     margin: 0%;
+    font-size: 3em;
   }
   h2 {font-family: PSB}
   p {font-family: PSB}
   div {font-family: PSB}
 
 .tempdiv {
-  border: 4px solid #000000;
+  border: 4px solid #ffffff;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  background-color: #EBEDF2;
+  background-color: #143264;
   width: fit-content;
 }
 
-.text,button{
-  border: #000000 4px solid;
+.text {
+  border: #ffffff 4px solid;
   border-radius: 10px;
   padding: 4px;
   margin: 10px;
@@ -27,7 +29,7 @@
 
 .undertext {
   font-size: 15px;
-  color: #000000b2;
+  color: #ffffffb2;
   margin-top: 0%;
   margin-bottom: 0%;
 }
@@ -42,37 +44,63 @@
   left: 10px;  
   bottom: 5px;  
   right: 10px;    
-  border: #000000 4px solid;
+  border: #ffffff 4px solid;
   border-radius: 10px;
-  color: rgb(0, 0, 0);
-  background-color: #EBEDF2;  
+  color: rgb(255, 255, 255);
+  background-color: #143264;  
   text-align: center;  
   }  
 
 
-  .flex-container {
-    flex-wrap: wrap;
-  }
+.flex-container {
+  flex-wrap: wrap;
+}
 
-  .flex-container {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 
-  .flex-item {
-    padding: 5px;
-    width: fit-content;
-    min-width: 100px;
-    height: 100px;
-    margin: 10px;
-  }
+.flex-item {
+  padding: 5px;
+  width: fit-content;
+  min-width: 87px;
+  height: fit-content;
+  margin: 10px;
+}
+
+canvas {
+  display: block;
+}
+
+input, button{
+  background-color: #143264;
+  font-family: PSB;
+  font-size: larger;
+}
+
+button {
+  border: #ffffff 4px solid;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 10px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s all;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #143264;
+  box-shadow: #000000 0px 5px 30px;
+  margin: 5px;
+  padding: 9px;
+}
