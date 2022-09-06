@@ -8,6 +8,10 @@
     <title>weather</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="your version of Leaflet.js"></script>
+    <link type="text/css" rel="stylesheet" href="your version of Leaflet.css"/>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-core.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-core.css"/>
 
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
@@ -19,6 +23,7 @@
     <script src="sketch.js"></script>
     <div class="tempdiv">
       <h2 class="noTBMargin" id="city">Copenhagen</h2>
+      <img id="img" src="" alt="">
     </div>
     <div class="tempdiv">
       <h1 id="temp">20°</h1>
@@ -28,5 +33,8 @@
       <h1 id="humidity">70%</h1>
       <h2 class="undertext">humidity</h2>
     </div>
+    <div class="footer">  
+      Powered by <a href="https://openweathermap.org/">OpenWeatherMap</a>
+    </div>  
   </body>
 </html>

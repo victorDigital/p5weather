@@ -26,9 +26,10 @@ function weatherData(data){
     document.getElementById("city").innerHTML = weather.name;
     //document.getElementById("pressure").innerHTML = "pressure: " + str(weather.main.pressure) + "hPa";
     //document.getElementById("clouds").innerHTML = "clouds: " + str(weather.clouds.all) + "%";
+    document.getElementById("img").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=5&type=sat&size=300,300&shape=radius:30km|"+weather.coord.lat+","+weather.coord.lon;
   }
 }
-
+  
 function timeConverter(UNIX_timestamp){
   var a = new Date(UNIX_timestamp * 1000);
   var hour = a.getHours();
