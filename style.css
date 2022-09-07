@@ -104,3 +104,15 @@ button:hover {
   margin: 5px;
   padding: 9px;
 }
+
+/* if veiwport is 600px or less, make alliment center */
+@media screen and (max-width: 600px) {
+  .flex-container {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  
+}
