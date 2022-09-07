@@ -108,6 +108,7 @@ function weatherData(data){
     document.getElementById("pressure").innerHTML = str(weather.main.pressure) + "hPa";
     document.getElementById("clouds").innerHTML = str(weather.clouds.all) + "%";
     document.getElementById("img").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=9&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
+    document.getElementById("img2").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=1&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
   }
 }
   
