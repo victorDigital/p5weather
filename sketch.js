@@ -23,6 +23,7 @@ function preload() {
 function setup(){
   var canvas = createCanvas(87, 87);
   canvas.parent('cd');
+  getData("London");
 }
 
 function draw(){
@@ -109,6 +110,11 @@ function weatherData(data){
     document.getElementById("clouds").innerHTML = str(weather.clouds.all) + "%";
     document.getElementById("img").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=9&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
     document.getElementById("img2").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=1&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
+    document.getElementById("hiddenWhenNoInfo1").style.visibility = "visible";
+    document.getElementById("hiddenWhenNoInfo2").style.visibility = "visible";
+    document.getElementById("weather").style.visibility = "visible";
+
+
   }
 }
   
@@ -132,6 +138,11 @@ function getInputValue(){
   }
   if(weather == ""){
     document.getElementById("city").innerHTML = "City not found";
+    // if no city is found, the list elements is hidden
+    document.getElementById("hiddenWhenNoInfo1").style.visibility = "hidden";
+    document.getElementById("hiddenWhenNoInfo2").style.visibility = "hidden";
+    document.getElementById("weather").style.visibility = "hidden";
+
   }
   
 }
