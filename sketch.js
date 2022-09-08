@@ -1,4 +1,5 @@
 let weather;
+let weatherapi3;
 function preload() {
   i01d = loadImage('icons/01d.png');
   i01n = loadImage('icons/01n.png');
@@ -96,11 +97,19 @@ function getData(city) {
   loadJSON(weatherURL,weatherData); 
 }
 
+function getDataApi3(lon, lat) {
+  var keyAPI = "eb3c615f3cef8a8361db61722c4720e1"; 
+  //var weatherURL = "api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid="+keyAPI;
+  var weatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=eb3c615f3cef8a8361db61722c4720e1&units=metric";
+  loadJSON(weatherURL,weatherDataApi3); 
+}
+
 function weatherData(data){
   weather = "";
   if (data){
     weather = data;
     console.log(weather);
+    getDataApi3(weather.coord.lat, weather.coord.lon);
     document.getElementById("temp").innerHTML = str(weather.main.temp) + "°";
     document.getElementById("humidity").innerHTML = str(weather.main.humidity) + "%";
     document.getElementById("wind").innerHTML = str(weather.wind.speed) + "m/s";
@@ -113,8 +122,31 @@ function weatherData(data){
     document.getElementById("hiddenWhenNoInfo1").style.visibility = "visible";
     document.getElementById("hiddenWhenNoInfo2").style.visibility = "visible";
     document.getElementById("weather").style.visibility = "visible";
+  }
+}
 
-
+function weatherDataApi3(dataApi3){
+  weatherApi3 = "";
+  if (dataApi3){
+    weatherApi3 = dataApi3;
+    console.log(weatherApi3);
+    // make a unordered list of the weather forecast
+    var list = document.getElementById("weatherForecastul");
+    list.className = "flex-containertempdiv"
+    // clear the list
+    list.innerHTML = "";
+    // add the new list
+    for (var i = 0; i < weatherApi3.list.length; i++) {
+      var li = document.createElement("li");
+      var img = document.createElement("div");
+      img.innerHTML = "<img src='icons/" + weatherApi3.list[i].weather[0].icon + ".png' width='50' height='50'>";
+      li.appendChild(img);
+      var temp = document.createElement("p");
+      temp.innerHTML = str(weatherApi3.list[i].main.temp) + "°";
+      li.appendChild(temp);
+      li.className = "tempdiv";
+      list.appendChild(li);
+    }
   }
 }
   
