@@ -114,11 +114,11 @@ function weatherData(data){
     document.getElementById("humidity").innerHTML = str(weather.main.humidity) + "%";
     document.getElementById("wind").innerHTML = str(weather.wind.speed) + "m/s";
     document.getElementById("weather").innerHTML = weather.weather[0].description;
-    document.getElementById("city").innerHTML = weather.name;
+    document.getElementById("city").innerHTML = weather.name+", "+weather.sys.country;
     document.getElementById("pressure").innerHTML = str(weather.main.pressure) + "hPa";
     document.getElementById("clouds").innerHTML = str(weather.clouds.all) + "%";
-    document.getElementById("img").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=9&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
-    document.getElementById("img2").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=1&type=sat&size=300,300&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
+    document.getElementById("img").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=13&type=sat&size=300,300@2x";
+    document.getElementById("img2").src = "https://www.mapquestapi.com/staticmap/v5/map?key=LFS3ZEtERxJq1467AIerQ7ibjtZ7MGHH&center="+weather.coord.lat+","+weather.coord.lon+"&zoom=1&type=sat&size=300,300@2x&shape=radius:8km|"+weather.coord.lat+","+weather.coord.lon;
     document.getElementById("hiddenWhenNoInfo1").style.visibility = "visible";
     document.getElementById("hiddenWhenNoInfo2").style.visibility = "visible";
     document.getElementById("weather").style.visibility = "visible";
@@ -130,23 +130,6 @@ function weatherDataApi3(dataApi3){
   if (dataApi3){
     weatherApi3 = dataApi3;
     console.log(weatherApi3);
-    // make a unordered list of the weather forecast
-    var list = document.getElementById("weatherForecastul");
-    list.className = "flex-containertempdiv"
-    // clear the list
-    list.innerHTML = "";
-    // add the new list
-    for (var i = 0; i < weatherApi3.list.length; i++) {
-      var li = document.createElement("li");
-      var img = document.createElement("div");
-      img.innerHTML = "<img src='icons/" + weatherApi3.list[i].weather[0].icon + ".png' width='50' height='50'>";
-      li.appendChild(img);
-      var temp = document.createElement("p");
-      temp.innerHTML = str(weatherApi3.list[i].main.temp) + "°";
-      li.appendChild(temp);
-      li.className = "tempdiv";
-      list.appendChild(li);
-    }
   }
 }
   
